@@ -5,12 +5,16 @@
   --darkish: #404040;
   --lightish: #e6e6e6;
   --light: #fafafa;
-  --mid: #666666;
-  --mid-2: #728095;
-  --alpha: #ff5555;
+  --offWhite: #efefef;
+  --mid: #595959;
+  --mid-2: #a3a3a3;
+  --alpha: #353eea;
+  --bravo: #651297;
+  --charlie: #131b96;
   --flow-space: 1.5rem;
   --flow-small: 1rem;
   --flow-large: 4rem;
+  --radius-small: 4px;
 }
 
 /* Box sizing rules */
@@ -69,6 +73,7 @@ ol[class] {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
+  color: var(--alpha);
 }
 a {
   text-decoration: none;
@@ -76,10 +81,9 @@ a {
   color: var(--dark);
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.2s ease 0s;
-  color: var(--alpha);
 }
 
-a:hover {
+a:not([class]):hover {
   border-bottom: 2px solid var(--alpha);
 }
 /* Make images easier to work with */
@@ -148,7 +152,7 @@ time {
   margin-inline: auto;
   padding-inline: 1rem;
   max-width: 64rem;
-  margin: 4rem auto;
+  margin: 0 0 auto 4rem;
 }
 
 .site-title {
@@ -159,6 +163,20 @@ time {
   Index
   ============ */
 
+header {
+  margin-bottom: var(--flow-large);
+  outline: 1px solid hotpink;
+  min-width: 100%;
+}
+nav {
+  margin: 0 3em;
+  padding: 0.3em 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
 .post-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
@@ -172,7 +190,6 @@ time {
 }
 
 .post-title {
-  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--dark);
   transition: color 0.1s ease 0s;
@@ -182,6 +199,29 @@ time {
 .post-title:hover {
   color: var(--alpha);
   border: none;
+}
+.post-time {
+  color: var(--mid-2);
+}
+.post-form {
+  display: flex;
+  justify-content: flex-start;
+  margin: var(--flow-large) 0;
+}
+.post-search {
+  width: 40%;
+  padding: 0.5em;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid var(--mid-2);
+  border-radius: var(--radius-small);
+  transition: all 0.2s ease 0s;
+}
+.post-search:focus {
+  border-color: var(--alpha);
+  box-shadow: 0 0 0 1px var(--alpha);
 }
 
 /* ===============
@@ -194,7 +234,7 @@ time {
   justify-content: center;
   align-items: flex-start;
   margin-bottom: var(--flow-space);
-  max-width: 700px;
+  max-width: 768px;
   margin: 2rem auto;
 }
 .article-title {

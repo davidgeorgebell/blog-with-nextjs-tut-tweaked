@@ -20,19 +20,20 @@ export default function Layout({ children, home }) {
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
       <header>
-        {home ? (
-          <>
-            <h1 className='site-title'>{name}</h1>
-          </>
-        ) : (
-          <>
-            <h2 className='site-title'>
+        <nav>
+          <ul className='nav-list'>
+            <li>
               <Link href='/'>
-                <a>{name}</a>
+                <a className='site-title'>{name}</a>
               </Link>
-            </h2>
-          </>
-        )}
+            </li>
+            <li>
+              <span role='img' aria-label='moon'>
+                🌖
+              </span>
+            </li>
+          </ul>
+        </nav>
       </header>
       <main>{children}</main>
       {/* {!home && (

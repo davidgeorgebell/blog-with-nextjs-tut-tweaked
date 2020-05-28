@@ -22,12 +22,17 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <input
-        aria-label='Search'
-        placeholder='Type to search...'
-        type='text'
-        onChange={handleSearchInput}
-      />
+      <h1>bellsnotes</h1>
+      <p>Welcome to my collection of notes and digital curiosity cabinet</p>
+      <form className='post-form'>
+        <input
+          className='post-search'
+          aria-label='Search'
+          placeholder='Type to search...'
+          type='text'
+          onChange={handleSearchInput}
+        />
+      </form>
       <section>
         <ul className='post-list'>
           {filteredArticles.map(({ id, date, title }) => (
