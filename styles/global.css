@@ -1,11 +1,13 @@
 :root {
-  --font-plain: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-plain: Arial, Helvetica, sans-serif;
+  --font-mono: 'Lucida Console', Monaco, monospace;
   --dark: #050505;
   --darkish: #404040;
   --lightish: #e6e6e6;
   --light: #fafafa;
   --mid: #c1c1c1;
   --alpha: #ff5555;
+  --flow-space: 1.5rem;
 }
 
 /* Box sizing rules */
@@ -133,5 +135,18 @@ select {
   margin-inline: auto;
   padding-inline: 1rem;
   max-width: 60rem;
-  padding-top: 4rem;
+  padding: 4rem;
+}
+
+.site-title {
+  font-family: var(--font-mono);
+  margin-bottom: var(--flow-space);
+}
+
+/* ============
+  Index
+  ============ */
+
+.post-list-item {
+  list-style: none;
 }
