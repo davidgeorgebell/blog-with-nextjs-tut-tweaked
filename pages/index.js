@@ -1,19 +1,36 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 
 import { getSortedPostsData } from '../lib/posts';
 import Layout, { siteTitle } from '../components/Layout';
 import { formatDate } from '../utils/formatDate';
 
 export default function Home({ allPostsData }) {
+  const [filteredPosts, setFilteredPosts] = useState('');
+
+  const handleSearchInput = event => {
+    setFilteredPosts(event.target.value);
+  };
+
+  const filteredArticles = allPostsData.filter(item =>
+    item.title.toLowerCase().includes(filteredPosts.toLowerCase())
+  );
+
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      <input
+        aria-label='Search'
+        placeholder='Type to search...'
+        type='text'
+        onChange={handleSearchInput}
+      />
       <section>
         <ul className='post-list'>
-          {allPostsData.map(({ id, date, title }) => (
+          {filteredArticles.map(({ id, date, title }) => (
             <li key={id} className='post-list-item'>
               <Link href='/posts/[id]' as={`/posts/${id}`}>
                 <a className='post-title'>{title}</a>

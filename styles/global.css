@@ -49,6 +49,7 @@ h3,
 h4 {
   letter-spacing: -0.5px;
   margin: var(--flow-space) 0;
+  font-weight: 700;
 }
 /* Set core body defaults */
 body {
