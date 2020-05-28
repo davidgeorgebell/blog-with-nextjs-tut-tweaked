@@ -5,9 +5,12 @@
   --darkish: #404040;
   --lightish: #e6e6e6;
   --light: #fafafa;
-  --mid: #c1c1c1;
+  --mid: #666666;
+  --mid-2: #728095;
   --alpha: #ff5555;
   --flow-space: 1.5rem;
+  --flow-small: 1rem;
+  --flow-large: 4rem;
 }
 
 /* Box sizing rules */
@@ -45,6 +48,7 @@ h2,
 h3,
 h4 {
   letter-spacing: -0.5px;
+  margin: var(--flow-space) 0;
 }
 /* Set core body defaults */
 body {
@@ -70,7 +74,7 @@ a {
   font-weight: 700;
   color: var(--dark);
   border-bottom: 2px solid transparent;
-  transition: border-bottom 0.3s ease 0s;
+  transition: border-bottom 0.2s ease 0s;
   color: var(--alpha);
 }
 
@@ -96,6 +100,10 @@ select {
   font: inherit;
 }
 
+time {
+  color: var(--mid);
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -106,24 +114,28 @@ select {
   }
 }
 
+/* ================
+  Responsive type
+  =============== */
+
 @media (min-width: 640px) {
   body {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 @media (min-width: 768px) {
   body {
-    font-size: 19px;
+    font-size: 17px;
   }
 }
 @media (min-width: 1024px) {
   body {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1280px) {
   body {
-    font-size: 22px;
+    font-size: 19px;
   }
 }
 
@@ -134,12 +146,11 @@ select {
 .container {
   margin-inline: auto;
   padding-inline: 1rem;
-  max-width: 60rem;
-  padding: 4rem;
+  max-width: 64rem;
+  margin: 4rem auto;
 }
 
 .site-title {
-  font-family: var(--font-mono);
   margin-bottom: var(--flow-space);
 }
 
@@ -147,6 +158,44 @@ select {
   Index
   ============ */
 
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+  gap: 16px;
+}
 .post-list-item {
-  list-style: none;
+  margin: var(--flow-space) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.post-title {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--dark);
+  transition: color 0.1s ease 0s;
+  margin-bottom: var(--flow-small);
+  border: none;
+}
+.post-title:hover {
+  color: var(--alpha);
+  border: none;
+}
+
+/* ===============
+  Posts
+  ============== */
+
+.article-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: var(--flow-space);
+  max-width: 700px;
+  margin: 2rem auto;
+}
+.article-title {
+  margin: var(--flow-large) 0;
 }

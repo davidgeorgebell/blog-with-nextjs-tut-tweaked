@@ -12,14 +12,13 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section>
-        <ul>
+        <ul className='post-list'>
           {allPostsData.map(({ id, date, title }) => (
             <li key={id} className='post-list-item'>
               <Link href='/posts/[id]' as={`/posts/${id}`}>
-                <a>{title}</a>
+                <a className='post-title'>{title}</a>
               </Link>
-              <br />
-              {formatDate(date)}
+              <div className='post-time'>{formatDate(date)}</div>
             </li>
           ))}
         </ul>
