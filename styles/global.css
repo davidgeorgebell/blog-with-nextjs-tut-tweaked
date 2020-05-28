@@ -1,0 +1,137 @@
+:root {
+  --font-plain: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --dark: #050505;
+  --darkish: #404040;
+  --lightish: #e6e6e6;
+  --light: #fafafa;
+  --mid: #c1c1c1;
+  --alpha: #ff5555;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: -0.5px;
+}
+/* Set core body defaults */
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: var(--font-plain);
+  color: var(--dark);
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--dark);
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s ease 0s;
+  color: var(--alpha);
+}
+
+a:hover {
+  border-bottom: 2px solid var(--alpha);
+}
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (min-width: 640px) {
+  body {
+    font-size: 17px;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 19px;
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    font-size: 21px;
+  }
+}
+@media (min-width: 1280px) {
+  body {
+    font-size: 22px;
+  }
+}
+
+/* ==============
+  Layout
+=============== */
+
+.container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  max-width: 60rem;
+  padding-top: 4rem;
+}
