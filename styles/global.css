@@ -60,7 +60,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: var(--font-plain);
+  font-family: var(--font-mono);
   color: var(--dark);
 }
 
@@ -148,11 +148,14 @@ time {
   Layout
 =============== */
 
+main {
+  margin: 0;
+  padding: 0 2rem;
+  max-width: 768px;
+}
+.layout {
+}
 .container {
-  margin-inline: auto;
-  padding-inline: 1rem;
-  max-width: 64rem;
-  margin: 0 0 auto 4rem;
 }
 
 .site-title {
@@ -165,35 +168,40 @@ time {
 
 header {
   margin-bottom: var(--flow-large);
-  outline: 1px solid hotpink;
-  min-width: 100%;
+  padding: 4rem auto;
 }
 nav {
-  margin: 0 3em;
-  padding: 0.3em 0;
+  padding: 0.5rem 2rem;
+  margin: 0 auto;
 }
-
+.nav-link {
+  color: var(--dark);
+  padding: 1rem 1rem;
+}
 .nav-list {
   display: flex;
   justify-content: space-between;
 }
+footer {
+  margin-top: var(--flow-large);
+  padding: 4rem auto;
+}
 .post-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
-  gap: 16px;
+  grid-template-columns: 1fr;
 }
 .post-list-item {
   margin: var(--flow-space) 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
 }
 
 .post-title {
   text-transform: uppercase;
   color: var(--dark);
   transition: color 0.1s ease 0s;
-  margin-bottom: var(--flow-small);
+  margin-bottom: 0;
   border: none;
 }
 .post-title:hover {
@@ -201,16 +209,17 @@ nav {
   border: none;
 }
 .post-time {
-  color: var(--mid-2);
+  color: var(--darkish);
 }
 .post-form {
   display: flex;
   justify-content: flex-start;
-  margin: var(--flow-large) 0;
+  margin: var(--flow-space) 0;
 }
 .post-search {
-  width: 40%;
-  padding: 0.5em;
+  max-width: 400px;
+  width: 100%;
+  padding: 0.2em;
   border: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -229,13 +238,10 @@ nav {
   ============== */
 
 .article-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   margin-bottom: var(--flow-space);
+}
+.article-content {
   max-width: 768px;
-  margin: 2rem auto;
 }
 .article-title {
   margin: var(--flow-large) 0;

@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-const name = 'BellsNotes';
+const name = 'bellsnotes';
 export const siteTitle = 'bellsnotes';
 
 export default function Layout({ children, home }) {
   return (
-    <div className='container'>
+    <div className='layout'>
       <Head>
         <link rel='icon' href='/pen.png' />
         <meta name='description' content='Online notebook' />
@@ -19,30 +19,48 @@ export default function Layout({ children, home }) {
         <meta name='og:title' content={siteTitle} />
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
-      <header>
-        <nav>
-          <ul className='nav-list'>
-            <li>
-              <Link href='/'>
-                <a className='site-title'>{name}</a>
-              </Link>
-            </li>
-            <li>
-              <span role='img' aria-label='moon'>
-                🌖
-              </span>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <main>{children}</main>
-      {/* {!home && (
+      <div className='container'>
+        <header>
+          <nav>
+            <ul className='nav-list'>
+              <li>
+                <Link href='/'>
+                  <a className='site-title'>{name}</a>
+                </Link>
+              </li>
+              <li>
+                <a className='nav-link' href='https://tinyletter.com/davidbell'>
+                  newsletter
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <main>{children}</main>
+        {/* {!home && (
         <div>
           <Link href='/'>
             <a className='back-home'>← Back to home</a>
           </Link>
         </div>
       )} */}
+        <footer>
+          <nav>
+            <ul className='nav-list'>
+              <li>
+                <Link href='/'>
+                  <a className='site-title'>{name}</a>
+                </Link>
+              </li>
+              <li>
+                <a className='nav-link' href='https://tinyletter.com/davidbell'>
+                  newsletter
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
+      </div>
     </div>
   );
 }
