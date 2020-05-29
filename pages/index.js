@@ -24,7 +24,7 @@ export default function Home({ allPostsData }) {
       </Head>
       <h1>bellsnotes</h1>
       <p>
-        Welcome to my curiosity cabinet. This is my collection of notes on
+        Welcome to my cabinet of curiosities. This is my collection of notes on
         anything.
       </p>
       <form className='post-form'>

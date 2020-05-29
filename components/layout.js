@@ -8,7 +8,7 @@ export default function Layout({ children, home }) {
   return (
     <div className='layout'>
       <Head>
-        <link rel='icon' href='/pen.png' />
+        <link rel='icon' href='/milky-way.png' />
         <meta name='description' content='Online notebook' />
         <meta
           property='og:image'
