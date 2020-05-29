@@ -30,7 +30,7 @@ export default function Layout({ children, home }) {
               </li>
               <li>
                 <a className='nav-link' href='https://tinyletter.com/davidbell'>
-                  newsletter
+                  Newsletter
                 </a>
               </li>
             </ul>
