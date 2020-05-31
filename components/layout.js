@@ -4,7 +4,7 @@ import Link from 'next/link';
 const name = 'bellsnotes';
 export const siteTitle = 'bellsnotes';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children }) {
   return (
     <div className='layout'>
       <Head>

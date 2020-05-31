@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { getSortedPostsData } from '../lib/posts';
-import Layout, { siteTitle } from '../components/Layout';
+import Layout, { siteTitle } from '../components/layout';
 import { formatDate } from '../utils/formatDate';
 
 export default function Home({ allPostsData }) {
