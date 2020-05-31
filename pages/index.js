@@ -38,7 +38,7 @@ export default function Home({ allPostsData }) {
       </form>
       <section>
         <ul className='post-list'>
-          {filteredArticles.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, date, title }) => (
             <li key={id} className='post-list-item'>
               <Link href='/posts/[id]' as={`/posts/${id}`}>
                 <a className='post-title'>{title}</a>
